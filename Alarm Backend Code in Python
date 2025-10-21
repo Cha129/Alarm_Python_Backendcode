@@ -1,0 +1,16 @@
+import datetime
+import time
+import pywhatkit
+Hour=int(input("Enter the Hour:"))
+Minute=int(input("Enter the Minute:"))
+Meridian=str(input("Choose between the following options AM/PM:"))
+URL=str(input("URL of the song that you want make it as ringtone:"))
+if Meridian=="PM" or Meridian=="Pm" or Meridian=="pM" or Meridian=="pm":
+    Hour=Hour+12
+while True:
+    if Hour==datetime.datetime.now().hour and Minute==datetime.datetime.now().minute:
+        print("It's time to wakeup")
+        pywhatkit.playonyt(URL)
+
+        time.sleep(27)
+
